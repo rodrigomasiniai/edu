@@ -1,10 +1,29 @@
+######## Imports & Initializations #########
 from transformers import pipeline
-import asyncio
-from typing import List, Dict
-from data_models import MetadadosCurso, Modulo, NucleoConceitual
+# Importing the pipeline function from the transformers library to create a text generation pipeline.
 
+import asyncio
+# Importing asyncio for asynchronous programming.
+
+from typing import List, Dict
+# Importing List and Dict from the typing module for type hinting.
+
+from data_models import MetadadosCurso, Modulo, NucleoConceitual
+# Importing data models for course metadata, modules, and conceptual nuclei.
+
+###### Initialize the Text Generation Pipeline #######
+# Initialize the text generation pipeline using the Mistral version 3 model
+# This pipeline will be used to generate text using the Mistral-7B-Instruct-v0.3 
+# model. It handles the setup for generating educational content.
+# requires export HUGGING_FACE_HUB_TOKEN="", since all powerful LLMs became gated models
 generator = pipeline('text-generation', model='mistralai/Mistral-7B-Instruct-v0.3')
 
+# TODO: option to the previous
+
+######### Generate Educational Content #####
+# Function to generate educational content for a conceptual nucleus within a course module.
+# Creating a detailed prompt with course, module, and conceptual nucleus information to 
+# guide the text generation.
 async def generate_content_for_nucleo_conceitual(
     generator, 
     metadata: MetadadosCurso, 
@@ -12,7 +31,8 @@ async def generate_content_for_nucleo_conceitual(
     nucleo_conceitual: NucleoConceitual
 ) -> str:
     """Generates educational content for a Nucleo Conceitual."""
-    
+    # Creating a detailed prompt with course, module, and conceptual nucleus information to 
+    # guide the text generation.
     prompt = f"""
     ### Gere um conteúdo educacional para um Núcleo Conceitual de um curso universitário.
 
@@ -48,6 +68,7 @@ async def generate_content_for_nucleo_conceitual(
     Seja conciso, claro e envolvente.) 
     """
 
+    # Model hyperparameters to generate educational content.
     result = generator(
         prompt,
         max_new_tokens=1024,
@@ -56,6 +77,8 @@ async def generate_content_for_nucleo_conceitual(
     )
     return result[0]['generated_text']
 
+###### Generate Video Script ######
+# Function to generate a video script for a conceptual nucleus within a course module.
 async def generate_video_script(
     generator,
     metadata: MetadadosCurso,
@@ -63,7 +86,8 @@ async def generate_video_script(
     nucleo_conceitual: NucleoConceitual
 ) -> str:
     """Generates a video script for a Nucleo Conceitual."""
-
+    # Creating a detailed prompt with course, module, and conceptual nucleus information to guide 
+    # the text generation for a video script.
     prompt = f"""
     ### Crie um roteiro para um vídeo educacional curto e envolvente.
 
@@ -104,14 +128,17 @@ async def generate_video_script(
     Seja criativo e envolvente.)
     """
 
+    # Model hyperparameters to generate educational content.
     result = generator(
         prompt,
-        max_new_tokens=512,
+        max_new_tokens=1024,
         num_return_sequences=1,
-        temperature=0.7
+        temperature=0.75
     )
     return result[0]['generated_text']
 
+###### GGenerate Teleprompter Text ######
+# Function to generate a video script for a conceptual nucleus within a course module.
 async def generate_teleprompter_text(
     generator,
     metadata: MetadadosCurso,
@@ -122,7 +149,8 @@ async def generate_teleprompter_text(
 
     # First, generate the content for the Núcleo Conceitual
     content = await generate_content_for_nucleo_conceitual(generator, metadata, modulo, nucleo_conceitual)
-
+    # Creating a detailed prompt with course, module, and conceptual nucleus information to 
+    # guide the text generation for teleprompter text.
     prompt = f"""
     ### Crie um texto para teleprompter para um vídeo educacional.
 
