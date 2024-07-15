@@ -1,0 +1,119 @@
+# Prompt para criacao de conteudo estruturado como um documento formal, com base no tema fornecido.
+
+Imagine que você é um professor universitário apaixonado por compartilhar seu conhecimento \n
+com seus alunos. Seu objetivo é criar um material de aprendizado que não seja apenas informativo, \n
+mas também cativante, acessível e que incite a reflexão crítica.
+            Dando Vida ao Conteúdo:
+            Ao elaborar este Núcleo Conceitual, considere os seguintes elementos-chave:
+            1. Contexto Cativante: Comece com uma introdução que capture a atenção do aluno e estabeleça a relevância do tópico dentro do contexto geral do curso. Imagine que você está contando uma história - qual seria o gancho que prende a atenção do seu público?
+            2. Clareza e Profundidade: Explore os conceitos-chave de forma clara e concisa, utilizando exemplos específicos e relevantes para ilustrar os pontos principais.
+            3. Estimulando o Pensamento Crítico: Inclua perguntas instigantes que incentivem os alunos a refletir sobre os conceitos apresentados e a fazer conexões com suas próprias experiências.
+            4. Formato Dinâmico: Utilize uma combinação de parágrafos, bullet points, exemplos, tabelas, analogias ou qualquer outro recurso que torne o conteúdo mais envolvente e fácil de assimilar.
+                        
+            Crie um Núcleo Conceitual rico e informativo sobre [Título do Núcleo Conceitual 1], considerando o tema geral [tema_educacional] e os seguintes pontos:
+                * [Ponto 1 relevante ao NC1]
+                * [Ponto 2 relevante ao NC1]
+                * [Ponto 3 relevante ao NC1]
+            
+Abaixo vou lhe apresentar a estrutura do documento e lhe entregar o contexto e minhas expectativas.
+
+# O Contexto:
+Nome do Curso: {codigo_nome}
+Tema: {tema_educacional} 
+Descrição do Público: {descricao_publico}
+Objetivos de Aprendizagem: Os alunos deverão ser capazes de {', '.join(objetivos)}
+
+# Estrutura do Documento:
+
+**Título:**  {nucleo_conceitual.titulo}
+**Itens Iniciais**
+* **Descrição:** (Breve explanação do tema - máximo 150 palavras)
+* **Propósito:** (Por que este material é relevante? - máximo 350 palavras)
+* **Objetivos:**
+    * {modulo.titulo} do Módulo 1
+    * {modulo.titulo} do Módulo 2
+    * {modulo.titulo} do Módulo 3
+
+**Introdução:** (Apresentação envolvente do tema - máximo 200 palavras)
+* **Conteúdo:**
+    * **Módulo 1 - [{modulo.titulo} do Módulo 1]:**
+        * **NC1 [{nucleo_conceitual.titulo} 1]:**
+            
+        * **NC2 [{nucleo_conceitual.titulo} 2]:**
+
+        * **NC3 [{nucleo_conceitual.titulo} 3]:**
+
+        * **Atividades - Verificando o aprendizado:**
+            * 1. (Questão 1)
+                * a) (Alternativa A)
+                * b) (Alternativa B)
+                * ...
+                * Gabarito: (Letra correta)
+                * Justificativa: (Explicação da resposta)
+                * Ponto de retorno: (NC referente à questão)
+            * 2. (Questão 2)
+                * ...
+    * **Módulo 2 - [{modulo.titulo} do Módulo 2]:**
+        * **NC1 [{nucleo_conceitual.titulo} 1]:**
+            
+        * **NC2 [{nucleo_conceitual.titulo} 2]:**
+
+        * **NC3 [{nucleo_conceitual.titulo} 3]:**
+
+        * **Atividades - Verificando o aprendizado:**
+            * 1. (Questão 1)
+                * a) (Alternativa A)
+                * b) (Alternativa B)
+                * ...
+                * Gabarito: (Letra correta)
+                * Justificativa: (Explicação da resposta)
+                * Ponto de retorno: (NC referente à questão)
+
+    * **Módulo 3 - [{modulo.titulo} do Módulo 3]:**
+        * **NC1 [{nucleo_conceitual.titulo} 1]:**
+            
+        * **NC2 [{nucleo_conceitual.titulo} 2]:**
+
+        * **NC3 [{nucleo_conceitual.titulo} 3]:**
+
+        * **Atividades - Verificando o aprendizado:**
+            * 1. (Questão 1)
+                * a) (Alternativa A)
+                * b) (Alternativa B)
+                * ...
+                * Gabarito: (Letra correta)
+                * Justificativa: (Explicação da resposta)
+                * Ponto de retorno: (NC referente à questão)
+* **ITENS FINAIS:**
+* **Considerações finais:** (Conclusão reflexiva - máximo 200 palavras)
+* **Referências:** (Lista de fontes utilizadas - seguir formato ABNT)
+* **Explore +:** (Recursos adicionais - links, livros, artigos)
+* **Recursos audiovisuais:**
+    * **TEMA:** (Tema do vídeo)
+        * **VALIDAÇÃO DA EQUIPE DE QUALIDADE (Q1)**
+        * **VALIDAÇÃO DO ESTÚDIO**
+            * Objeto
+            * Título do vídeo:
+            * Posição do vídeo no NC:
+            * Sinopse:
+            * Nome do Especialista:
+            * Titulação:
+            * Lattes:
+            * Celular:
+            * E-mail:
+            * Local da Gravação:
+                * [ ] Estúdio
+                * [ ] Estúdio Parceiro
+                * [X] Remoto
+                * [ ] Externo
+            * Modo de Produção:
+                * [ ] COM pós-produção
+                * [X] SEM pós-produção
+            * Formato de Roteiro:
+
+
+Lembre-se das seguinte Informações:
+
+Utilize uma linguagem clara, concisa e adequada para o público-alvo.
+Apresente o conteúdo de forma lógica e organizada, utilizando recursos de formatação para facilitar a leitura.
+Assegure-se de que o conteúdo esteja completo e abrangente.
