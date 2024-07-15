@@ -1,0 +1,1 @@
+# edu_sol_AI

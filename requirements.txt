@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+pdfminer.six
+python-docx
+pytesseract
+Pillow
+cerberus
+transformers
+gradio
+asyncio
