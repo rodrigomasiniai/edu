@@ -87,7 +87,8 @@ async def general_exception_handler(request: Request, exc: Exception):
 async def generate_course(
     background_tasks: BackgroundTasks,
     form_file: UploadFile = File(...), 
-    plan_file: UploadFile = File(...)
+    plan_file: UploadFile = File(...),
+    form_data: dict = None # Receiving form data directly
 ):
     """Processes uploaded form and plan files to generate course content."""
     # Endpoint to generate course content from uploaded form and plan files.
@@ -95,16 +96,22 @@ async def generate_course(
     try:
         # Extract text from the uploaded form file.
         form_text = await extract_text_from_file(form_file)
-        # Extract text from the uploaded plan file.
-        plan_text = await extract_text_from_file(plan_file)    
-        # Extract course metadata from the form text.
+        # Extract metadata data from the plan text.
         course_metadata_dict = extract_course_metadata(form_text)
         # Validate the extracted course metadata.
         validated_metadata = validate_course_metadata(course_metadata_dict)
+        
+        # Extract text from the uploaded plan file.
+        plan_text = await extract_text_from_file(plan_file)    
         # Extract module data from the plan text.
         modulos_data = extract_modulos(plan_text)
+        
+        # Validate the form data against the MetadadosCurso model
+        validated_metadata = validate_course_metadata(form_data)
         # Create a MetadadosCurso object with the validated metadata.
         course_metadata = MetadadosCurso(**validated_metadata)
+        
+        
         # Create a list of Modulo objects with their respective NucleoConceitual objects.
         modulos = [Modulo(titulo=m['titulo'], nucleos_conceituais=[NucleoConceitual(**nc) for nc in m['nucleos_conceituais']]) for m in modulos_data]
         # Create a CursoData object with the course metadata and modules.
